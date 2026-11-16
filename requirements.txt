@@ -1,0 +1,12 @@
+# Runtime dependencies for app.py, its modules, and model/.
+# Versions below were the ones in the working install (Python 3.14, WSL Ubuntu);
+# lower bounds are kept loose so the repo installs on other recent Pythons.
+streamlit>=1.40      # tested 1.58.0
+pandas>=2.2          # tested 3.0.3
+numpy>=1.26          # tested 2.4.6
+scipy>=1.11          # tested 1.17.1
+requests>=2.31       # tested 2.34.2
+
+# Not imported by the files in this repo, but used by the upstream data-refresh
+# scripts that daily.sh calls (Statcast pulls). Uncomment if you rebuild inputs.
+# pybaseball>=2.2

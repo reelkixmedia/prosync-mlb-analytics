@@ -1,0 +1,37 @@
+# Pro-Sync theme — NIKKO-THEME
+#
+# THIS FILE IS WHY THE BOARD NEVER CHANGED COLOUR OR SIZE.
+#
+# st.dataframe does NOT render HTML. Since Streamlit ~1.23 the grid is painted onto a <canvas>
+# by glide-data-grid, so CSS selectors like
+#     [data-testid="stDataFrame"] div[role="gridcell"] { font-size: 13.5px }
+# match nothing at all — those DOM nodes do not exist. Every font/colour rule aimed at the board
+# was a silent no-op. Canvas text is governed ONLY by the theme below.
+#
+# There was no config.toml here, so the board has been drawing in Streamlit's stock dark theme
+# the whole time while the surrounding chrome followed the CSS. That is the mismatch.
+#
+# Values are kept IDENTICAL to the CSS variables in app.py (:root, NIKKO-TERMINAL block).
+# If you change one, change the other or the grid and the chrome drift apart again.
+
+[theme]
+base = "dark"
+
+# not pure black: elevation in dark mode is expressed by making the higher surface lighter,
+# which is impossible from a floor of black — everything flattens.
+backgroundColor = "#10141d"
+
+# one step up. Drives the dataframe header row, popovers, and widget fills.
+secondaryBackgroundColor = "#1b2230"
+
+# off-white, not white. Near-white on dark causes halation and fatigues the eye on long scans.
+textColor = "#dde3ed"
+
+# the amber accent — the one hot colour, the dense-terminal convention.
+primaryColor = "#ff6b35"
+
+# THE BOARD FONT SIZE. Streamlit's default is 14; the grid inherits from this and nothing else.
+# This is the setting that actually makes the data readable.
+baseFontSize = 15
+
+font = "sans-serif"

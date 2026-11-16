@@ -1,0 +1,36 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python / environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# streamlit
+.streamlit/secrets.toml
+
+# generated data and run artifacts (the pipeline writes these nightly)
+boards/
+logs/
+hr_snapshots/
+history/
+*.bak
+*.bak_*
+*.parquet
+statcast*.csv
+savant_data.csv
+/*.csv
+.autodaily_last
+.last_savant_refresh
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+.vscode/
+.idea/
